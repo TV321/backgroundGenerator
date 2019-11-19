@@ -25,3 +25,10 @@ h3{
   text-transform: none;
   letter-spacing: 0.01em;
 }
+
+button{
+  padding: 5px 15px;
+  font-size: 18px;
+  margin-top: 20px;
+  cursor: pointer;
+}

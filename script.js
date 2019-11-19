@@ -16,19 +16,22 @@ setGradient();
 //color2.addEventListener("input", setGradient);
 button.addEventListener("click", selfDestruct);
 
-var one = [0, 25, 12];
+var randColor1 = [0, 25, 12];
+var randColor2 = [3, 34, 2];
+
+function randList(lis) {
+  for (var i = 0; i < lis.length; i++) {
+    lis[i] = Math.floor(Math.random() * 256);
+  }
+}
 
 function selfDestruct(){
-  for (var i = 0; i < one.length; i++) {
-    one[i] = Math.floor(Math.random() * 256);
-  }
-  var two = "rgb(" + one[0] + ", " + one[1] + ", " + one[2] +")";
-  console.log(two);
+  randList(randColor1);
+  randList(randColor2);
+  var one = "rgb(" + randColor1[0] + ", " + randColor1[1] + ", " + randColor1[2] +")";
+  var two = "rgb(" + randColor2[0] + ", " + randColor2[1] + ", " + randColor2[2] +")";
 
-
-  body.style.background = "linear-gradient(to right, " + two
-  + ", " + color2.value + ")";
-  console.log("hilfe");
-  console.log(two);
-  console.log(body.style.background);
+  body.style.background = "linear-gradient(to right, " + one
+  + ", " + two + ")";
+  css.textContent = body.style.background;
 }
